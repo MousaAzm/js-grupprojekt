@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  height: 100px;
+}
+
+
+.landing-layer-top {
+  height: 70px;
+}
+
+.btn-c {
+  text-transform: uppercase;
+  margin: 10px;
+  background-repeat: no-repeat;
+}
+
+.btn-c:hover {
+  box-shadow: 0 0 10px 0 #5abdff inset, 0 0 10px 4px #3498db;
+  background-color: #333642;
+}
+
+
+
+.col-4 {
+  margin-top: 25px;
+}
+.card {
+  height: 100%;
+  width: 100%;
+}
+.sv1 {
+  background-size: cover;
+  width: 100%;
+  display: block;
+}
+
+.sv2 {
+  background-size: cover;
+  width: 100%;
+  display: block;
+}
+
+footer {
+  height: 100px;
+  text-align: center;
+}
