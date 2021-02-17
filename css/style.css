@@ -14,15 +14,19 @@
   height: 70px;
 }
 
+.btn-s:hover{
+  box-shadow: 0 0 10px 0 #5abdff inset, 0 0 10px 4px #3498db;
+  background-color: #333642;
+
+}
+
 .btn-c {
   text-transform: uppercase;
   margin: 10px;
-  background-repeat: no-repeat;
 }
 
 .btn-c:hover {
   box-shadow: 0 0 10px 0 #5abdff inset, 0 0 10px 4px #3498db;
-  background-color: #333642;
 }
 
 
