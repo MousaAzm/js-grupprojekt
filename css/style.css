@@ -4,32 +4,63 @@
   box-sizing: border-box;
 }
 
+.bg {
+  background: url("../img/lm-cr-n.jpg") no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 .navbar {
-  height: 100px;
+  height: 300px;
 }
 
+.navbar-brand{
+  display: block;
+  height: 150px;
+  width: 150px;
+}
 
 .landing-layer-top {
-  height: 70px;
+  
+  text-align: center;
 }
 
+
 .btn-s:hover{
-  box-shadow: 0 0 10px 0 #5abdff inset, 0 0 10px 4px #3498db;
-  background-color: #333642;
+  box-shadow: 0 0 10px 0 #E0A800 inset, 0 0 10px 4px #E0A800;
+ 
 
 }
 
 .btn-c {
+  transition: transform .5s;
   text-transform: uppercase;
   margin: 10px;
 }
 
 .btn-c:hover {
-  box-shadow: 0 0 10px 0 #5abdff inset, 0 0 10px 4px #3498db;
+  box-shadow: 0 0 10px 0 #E0A800 inset, 0 0 10px 4px #E0A800;
+  transform: scale(1.2);
 }
 
+.text-ucl  {
+  
+  margin: 2% 10% 2% 10% ;
+  
+  
+}
+.text-ucl div {
+  transition: transform .2s;
+  color: rgb(247, 247, 252);
+  font-size: 70px;
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  
 
+.text-ucl div:hover {
+  transform: scale(1.2);
+}
 
 .col-4 {
   margin-top: 25px;
@@ -38,19 +69,13 @@
   height: 100%;
   width: 100%;
 }
-.sv1 {
-  background-size: cover;
-  width: 100%;
-  display: block;
-}
 
-.sv2 {
-  background-size: cover;
-  width: 100%;
-  display: block;
-}
+
 
 footer {
-  height: 100px;
+  color: aliceblue;
+  height: 50px;
   text-align: center;
+  margin-top: 20px;
 }
+
