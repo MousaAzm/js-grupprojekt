@@ -8,8 +8,13 @@
   background: url("../img/lm-cr-n.jpg") no-repeat center;
   background-attachment: fixed;
   background-size: cover;
+  
 }
 
+.blur-bg{
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(12, 5, 41, 0.5)
+}
 .navbar {
   height: 300px;
 }
@@ -46,8 +51,6 @@
 .text-ucl  {
   
   margin: 2% 10% 2% 10% ;
-  
-  
 }
 .text-ucl div {
   transition: transform .2s;
