@@ -14,6 +14,14 @@ function getTeamUrl(teamName) {
     return url;
   }
 
+  function getPlayerUrl(player) {
+    const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?");
+  
+    url.searchParams.append("p", player)
+  
+    return url;
+  }
+
 let outputCard1 = document.querySelector("#test");
 
 let outputCard2 = document.querySelector("#test2");
@@ -32,7 +40,7 @@ let img4 = document.getElementById("img4");
 
 
 
-async function gitJSON (output, img, teamName) {
+async function gitJSONteam (output, img, teamName) {
 
     const url = getTeamUrl(teamName)
 
@@ -46,10 +54,24 @@ async function gitJSON (output, img, teamName) {
 
   };
 
-  gitJSON(outputCard1, img1, "Arsenal");
+  async function gitJSONplayer (output, img, player) {
 
-  gitJSON(outputCard2, img2, "Liverpool");
+    const url = getPlayerUrl(player)
 
-  gitJSON(outputCard3, img3, "Manchester United");
+    const serverResponse = await fetch(url);
 
-  gitJSON(outputCard4, img4, "Newcastle");
+    const info = await serverResponse.json();
+
+    output.innerHTML = info.player[0].strDescriptionEN;
+
+    img.src = info.player[0].strRender;
+
+  };
+
+  gitJSONplayer(outputCard1, img1, "dybala");
+
+  gitJSONplayer(outputCard2, img2, "pjanic");
+
+  gitJSONteam(outputCard3, img3, "Örgryte");
+
+  gitJSONteam(outputCard4, img4, "Livorno");
