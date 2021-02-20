@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/main.js" defer="true"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <title>Travel</title>
 </head>
 <body>
@@ -14,9 +19,9 @@
   <div class="blur-bg">
     <nav class="navbar">
         <img class="navbar-brand logo-c" src="img/logo.png" alt="logo">
-        <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-warning my-2 my-sm-0 btn-s" type="submit">Search</button>
+        <form class="form-inline bt-sr">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
+        <button class="btn btn-outline-warning my-2 my-sm-0 btn-s" type="submit" src="#img1" id="searchBtn">Search</button>
         </form>
     </nav>
     <header>
@@ -37,114 +42,58 @@
         <div>League</div> 
     </div> 
     
-      
-    
-    
+     <!--slider-->
+     <div class="swiper-container">
+      <div class="swiper-wrapper">
 
-   
-    <div class="container">      
-        <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+         <div class="card swiper-slide" >    
+         <button id="btnImg1"><a href="#img1"> <img class="card-img-top" src="img/gallery/01.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+         <button id="btnImg2"><a href="#img1"> <img class="card-img-top" src="img/gallery/02.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg3"><a href="#img1"> <img class="card-img-top" src="img/gallery/03.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg4"><a href="#img1"> <img class="card-img-top" src="img/gallery/04.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg5"><a href="#img1"> <img class="card-img-top" src="img/gallery/05.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg6"><a href="#img1"> <img class="card-img-top" src="img/gallery/06.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg7"><a href="#img1"> <img class="card-img-top" src="img/gallery/07.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg8"><a href="#img1"> <img class="card-img-top" src="img/gallery/08.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg9"><a href="#img1"> <img class="card-img-top" src="img/gallery/09.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+         <div class="card swiper-slide" >    
+          <button id="btnImg10"><a href="#img1"> <img class="card-img-top" src="img/gallery/10.jpg" width="250px" height="390px" alt="Card image cap"></a></button>
+         </div>
+          
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+   <!--main-->
+    <div class="container container-bg">      
+        <div class="row row-top">
+                <div class="col-4 offset-4">
+                    <div class="card card-deck bg-transparent text-white border-white check-card" id="showCard">
+                        <img class="card-img-top" src="img/gallery/football.jpg" alt="Card image cap" id="img1">
+                        <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#text" id="displayText">Show More</button>
+                        <div class="collapse" id="text"></div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
+                </div>   
          </div>     
     </div>
         
-     
-   
+    
  
 <!--footer-->
 <footer> 
@@ -171,9 +120,6 @@
   </footer> 
 </div>   
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
