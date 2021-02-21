@@ -1,6 +1,6 @@
 
 "use strict";
-document.getElementById("mb2").onclick = function() {bytSida("andrasidan.html")};
+document.getElementById("mb2").onclick = function() {bytSida("teams.html")};
 
 function bytSida(html) {
     window.location.href = html;
@@ -33,7 +33,7 @@ async function gitJSONplayer (output, img, player) {
   const serverResponse = await fetch(url);
 
   const info = await serverResponse.json();
-  console.log(serverResponse);
+  
   output.innerHTML = info.player[0].strDescriptionEN;
 
   img.src = info.player[0].strRender;
@@ -130,7 +130,7 @@ function moveCardRight(){
 
 document.addEventListener('DOMContentLoaded', function() {
     
-  swiper = new Swiper('.swiper-container', {
+  let swiper = new Swiper('.swiper-container', {
      effect: 'coverflow',
      grabCursor: true,
      centeredSlides: true,
@@ -147,4 +147,4 @@ document.addEventListener('DOMContentLoaded', function() {
      },
    });
 
-}, false);
+});

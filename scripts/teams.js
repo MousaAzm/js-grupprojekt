@@ -1,6 +1,6 @@
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
 
-document.getElementById("mb2").onclick = function() {bytSida("andrasidan.html")};
+document.getElementById("mb2").onclick = function() {bytSida("teams.html")};
 
 function bytSida(html) {
     window.location.href = html;
