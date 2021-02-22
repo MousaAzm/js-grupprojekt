@@ -123,6 +123,7 @@
 }
   
 
+
 .text-ucl div:hover {
   transform: scale(1.2);
 }
@@ -132,6 +133,7 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 
 
 .swiper-slide {
@@ -144,7 +146,6 @@
   animation: swiperFrames linear 0.9s;
   animation-iteration-count: 1;
   transform-origin: 50% 50%;
-
 }
 @keyframes swiperFrames{
   0% {
@@ -159,12 +160,9 @@
 
 
 .container-bg {
-  border-bottom: 1px solid #E0A800;
-  
+ border-bottom: 1px solid #E0A800;
 }
-.col { 
-  margin: 35px 35px 35px 35px;
-}
+
 
 .check-card{
   animation: check-cardFrames ease 1s;
@@ -203,12 +201,12 @@
 }
 
 footer {
-  color: aliceblue;
-  height: 50px;
+  color: #fff;
   text-align: center;
   margin-top: 20px;
 }
 
+<<<<<<< HEAD
 
 #container1{
   position: relative;
@@ -270,3 +268,7 @@ footer {
  }
 
 }
+=======
+/*flip-card teams page*/
+
+>>>>>>> 64e39d567f9c983137c8eb318e8268b164286e81
