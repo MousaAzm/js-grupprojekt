@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/teams.js" defer="true"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
@@ -18,18 +19,17 @@
     <nav class="navbar ">
         <img class="navbar-brand logo-c" src="img/logo.png" alt="logo">
         <form class="form-inline bt-sr">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-warning my-2 my-sm-0 btn-s" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchBarTeams">
+        <button class="btn btn-outline-warning my-2 my-sm-0 btn-s" type="submit" id="searchBtnTeams">Search</button>
         </form>
     </nav>
     <header>
         <div class="landing-layer-top">
             <form class="form-inline justify-content-center">
-                <button id="mb1" class="btn btn-outline-warning btn-c" type="button">HOME</button>
-                <button id="mb2" class="btn btn-outline-warning btn-c" type="button">TEAMS</button>
-                <button class="btn btn-outline-warning btn-c" type="button">Main button3</button>
-                <button class="btn btn-outline-warning btn-c" type="button">Main button4</button>
-               
+              <button id="mb1" class="btn btn-outline-warning btn-c" type="button">HOME</button>
+              <button id="mb2" class="btn btn-outline-warning btn-c" type="button">News</button>
+              <button id="mb3" class="btn btn-outline-warning btn-c" type="button">Players</button>
+              <button id="mb4" class="btn btn-outline-warning btn-c" type="button">TEAMS</button>    
             </form>
         </div>
     </header>
@@ -39,132 +39,49 @@
         <div style="color: #E0A800;">Champions</div> 
         <div>League</div> 
     </div>
-  
-    <div class="container">      
-        <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap" id="img1">
-                        <div class="card-body">
-                          <p class="card-text" id="test">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap" id="img2">
-                        <div class="card-body">
-                          <p class="card-text" id="test2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap" id="img3">
-                        <div class="card-body">
-                          <p class="card-text" id="test3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap" id="img4">
-                        <div class="card-body">
-                          <p class="card-text" id="test4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-         </div>     
-    </div>
-        
-<!--footer-->
-<footer> 
-    <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2021</span>
-          </div>
-          <div class="col-md-4">
-            <a href="https://github.com/TeamProjectEC/js-grupprojekt">GitHuben</a>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-            </ul>
+     <section>
+       <div class="continer">
+      
+       </div>
+     </section>
+     <!---->
+    <div class="container container-bg">      
+      <div class="row row-top justify-content-md-between">
+        <div class="col-4">
+          <div class="flip-card bg-dark effect-on-hover" style="height: 340px; width: 480px">
+            <div class="front"> <img src="img/gallery/football.jpg" alt="team"></div>
+            <div class="back"> <img class="card-img-top" src="" alt="Card image team" id="teamImg1">
+              <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText1" >Show More</button>
+              <div class="collapse" id="teamText1"></div>
+            </div>
           </div>
         </div>
-      </div>
-</footer>   
-</div>
+      </div>    
+    </div>   
+<!--footer-->       
+<footer> 
+      <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <span class="copyright">Copyright &copy; Your Website 2021</span>
+            </div>
+            <div class="col-md-4">
+              <a href="https://github.com/TeamProjectEC/js-grupprojekt">GitHuben</a>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline quicklinks">
+                <li class="list-inline-item">
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">Terms of Use</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+</footer> 
+</div>   
 </div>
 </body>
 

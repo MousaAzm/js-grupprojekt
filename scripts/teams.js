@@ -1,10 +1,20 @@
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
-
-document.getElementById("mb2").onclick = function() {bytSida("teams.html")};
+document.getElementById("mb2").onclick = function() {bytSida("news.html")};
+document.getElementById("mb3").onclick = function() {bytSida("players.html")};
 
 function bytSida(html) {
     window.location.href = html;
 }
+
+/*
+const searchTeams = document.getElementById("searchBarTeams");
+const searchBtnTeams = document.getElementById("searchBtnTeams");
+
+searchBtnTeams.addEventListener("click", function () {
+  
+ 
+});
+*/
 
 function getTeamUrl(teamName) {
     const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?");
@@ -14,30 +24,15 @@ function getTeamUrl(teamName) {
     return url;
   }
 
-  function getPlayerUrl(player) {
-    const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?");
-  
-    url.searchParams.append("p", player)
-  
-    return url;
-  }
 
-let outputCard1 = document.querySelector("#test");
+const tOutputCard1 = document.querySelector("#teamText1");
+//const tOutputCard2 = document.querySelector("#teamText2");
+//const tOutputCard3 = document.querySelector("#teamText3");
 
-let outputCard2 = document.querySelector("#test2");
 
-let outputCard3 = document.querySelector("#test3");
-
-let outputCard4 = document.querySelector("#test4");
-
-let img1 = document.getElementById("img1");
-
-let img2 = document.getElementById("img2");
-
-let img3 = document.getElementById("img3");
-
-let img4 = document.getElementById("img4");
-
+const tImg1 = document.getElementById("teamImg1");
+//const tImg2 = document.getElementById("teamImg2");
+//const tImg3 = document.getElementById("teamImg3");
 
 
 async function gitJSONteam (output, img, teamName) {
@@ -54,24 +49,8 @@ async function gitJSONteam (output, img, teamName) {
 
   };
 
-  async function gitJSONplayer (output, img, player) {
+  gitJSONteam(tOutputCard1, tImg1, "Barcelona");
+ // gitJSONteam(tOutputCard2, tImg2, "Liverpool");
+ // gitJSONteam(tOutputCard3, tImg3, "Real Madrid");
 
-    const url = getPlayerUrl(player)
-
-    const serverResponse = await fetch(url);
-
-    const info = await serverResponse.json();
-
-    output.innerHTML = info.player[0].strDescriptionEN;
-
-    img.src = info.player[0].strRender;
-
-  };
-
-  gitJSONplayer(outputCard1, img1, "dybala");
-
-  gitJSONplayer(outputCard2, img2, "pjanic");
-
-  gitJSONteam(outputCard3, img3, "Örgryte");
-
-  gitJSONteam(outputCard4, img4, "Livorno");
+  
