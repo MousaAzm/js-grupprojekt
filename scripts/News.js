@@ -4,6 +4,8 @@ document.getElementById("mb3").onclick = function() {bytSida("players.html")};
 
 document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
 
+document.getElementById("mb2").onclick = function() {bytSida("news.html")};
+
 
 
 
@@ -39,7 +41,7 @@ results.forEach((result) =>{
     var title = document.createElement("h2");
     var pa = document.createElement("p");
     var date = document.createElement("h3");
-    var searchbtn = document.createElement("button");
+    //var searchbtn = document.createElement("button");
     
 
     
@@ -50,14 +52,14 @@ results.forEach((result) =>{
     pa.innerText = result.description;
     date.innerText = result.published_at;
     
-    searchbtn.onclick= openUrl(result.url);
+   // searchbtn.onclick= openUrl(result.url);
 
 if(result.image == null){
     console.log("No Pic");
 }
   
 else{
-    child.append(searchbtn);
+    //child.append(searchbtn);
     child.append(imeg);
     child.append(title);
     child.append(pa);
@@ -78,6 +80,4 @@ window.onload = () => {
     };
   };
 
-  function openUrl(ur) {
-    window.open(ur);
-  }
+ 
