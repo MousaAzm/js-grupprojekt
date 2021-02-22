@@ -209,3 +209,64 @@ footer {
   margin-top: 20px;
 }
 
+
+#container1{
+  position: relative;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100px;
+
+}
+
+
+.container1 .card{
+  position:relative ;
+  max-width: 250px;
+  background: rgb(188, 126, 204);
+  margin:100px;
+  padding: 5px;
+
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  float: left;
+
+
+
+}
+
+
+.container1 .card .imeg {
+  max-width: relative;
+  
+}
+
+@media (max-width: 991px){
+  .container1{
+    flex-direction: column;
+  }
+
+}
+@media (max-width: 768px){
+  .container1{
+    flex-direction: column;
+  }
+  .container1 .card {
+    flex-direction: column;
+    max-width: 350px;
+  }
+  .container1 .card .imgBx {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+
+.container1 .card .content{
+
+  margin-left: 0px;
+ }
+
+}
