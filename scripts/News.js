@@ -18,7 +18,7 @@ function bytSida(html) {
   function searchShow(query){
 
     const api_key = "107b73e163c93f5f70ed0830a93940a0";
-    const api_url = "http://api.mediastack.com/v1/news?access_key=" + api_key + "&keywords=" + query;
+    const api_url = "https://api.mediastack.com/v1/news?access_key=" + api_key + "&keywords=" + query;
 
     fetch(api_url)
     .then((response) => response.json())
@@ -26,10 +26,11 @@ function bytSida(html) {
         console.log(jsonData);
         results = jsonData.data;
         console.log(results);
+        displaydataResult(results);
     });
 
 
-displaydataResult(results);
+
 
 }
 
