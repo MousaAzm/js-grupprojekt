@@ -189,7 +189,6 @@
   }
 }
 
-
 .collapse {
   margin:35px;
   
@@ -200,6 +199,10 @@
   margin-bottom: 55px;
 }
 
+.doTeam {
+  text-align: center;
+  font-size: 15px;
+}
 footer {
   color: #fff;
   text-align: center;
