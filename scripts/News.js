@@ -1,3 +1,4 @@
+
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
 
 document.getElementById("mb3").onclick = function() {bytSida("players.html")};
@@ -18,7 +19,7 @@ function bytSida(html) {
   function searchShow(query){
 
     const api_key = "107b73e163c93f5f70ed0830a93940a0";
-    const api_url = "http://api.mediastack.com/v1/news?access_key=" + api_key + "&keywords=" + query;
+    const api_url = "http://api.mediastack.com/v1/news?access_key=" + api_key + "&keywords=Uefa%20Champions%20League&sources=en";
 
     fetch(api_url)
     .then((response) => response.json())
@@ -36,16 +37,20 @@ function bytSida(html) {
 
 function displaydataResult(results){
 results.forEach((result) =>{
-    let parent = document.getElementById("card");
+    let parent = document.getElementById("col-4");
     var child = document.createElement("div");
     var imeg = document.createElement("img");
+    var child1 = document.createElement("div");
     var title = document.createElement("h2");
     var pa = document.createElement("p");
     var date = document.createElement("h3");
     //var searchbtn = document.createElement("button");
     
-
-    
+  imeg.className = "card-img-top";
+  child1.className = "card-body";
+  child.className = "card";
+  pa.className ="card-text"
+  imeg.alt = "Card image cap";
 
 
     imeg.src = result.image;
@@ -61,10 +66,12 @@ if(result.image == null){
   
 else{
     //child.append(searchbtn);
+    
     child.append(imeg);
-    child.append(title);
-    child.append(pa);
-    child.append(date);
+    child1.append(title);
+    child1.append(pa);
+    child1.append(date);
+    child.append(child1);
     parent.append(child);
 }
     
@@ -74,11 +81,8 @@ else{
 }
 
 
-window.onload = () => {
-    const SearchTermElement = document.getElementById("searchBar");
-    SearchTermElement.onkeyup = (event) => {
-      searchShow(SearchTermElement.value);
-    };
-  };
+window.onload = searchShow();
+    
+  
 
  
