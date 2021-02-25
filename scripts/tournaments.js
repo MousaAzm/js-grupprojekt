@@ -5,7 +5,7 @@ document.getElementById("mb3").onclick = function() {bytSida("players.html")};
 
 document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
 
-document.getElementById("mb2").onclick = function() {bytSida("news.html")};
+document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
 
 
 
@@ -16,16 +16,16 @@ function bytSida(html) {
 }
 
 
-  function searchShow(query){
+  function searchShow(){
 
-    const api_key = "107b73e163c93f5f70ed0830a93940a0";
-    const api_url = "http://api.mediastack.com/v1/news?access_key=" + api_key + "&keywords=Uefa%20Champions%20League&sources=en";
+  
+    const api_url = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=Uefa%20Champions%20League";
 
     fetch(api_url)
     .then((response) => response.json())
     .then((jsonData) => {
         console.log(jsonData);
-        results = jsonData.data;
+        results = jsonData.teams;
         console.log(results);
         displaydataResult(results);
     });
@@ -53,18 +53,14 @@ results.forEach((result) =>{
   imeg.alt = "Card image cap";
 
 
-    imeg.src = result.image;
-    title.innerText = result.title;
-    pa.innerText = result.description;
-    date.innerText = result.published_at;
+    imeg.src = result.strTeamBadge;
+    title.innerText = result.strTeam;
+    pa.innerText = result.strLeague;
+    date.innerText = result.intFormedYear;
     
    // searchbtn.onclick= openUrl(result.url);
 
-if(result.image == null){
-    console.log("No Pic");
-}
-  
-else{
+
     //child.append(searchbtn);
     
     child.append(imeg);
@@ -73,7 +69,7 @@ else{
     child1.append(date);
     child.append(child1);
     parent.append(child);
-}
+
     
 
 });

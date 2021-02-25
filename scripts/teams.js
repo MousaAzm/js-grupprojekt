@@ -1,5 +1,5 @@
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
-document.getElementById("mb2").onclick = function() {bytSida("news.html")};
+document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
 document.getElementById("mb3").onclick = function() {bytSida("players.html")};
 
 function bytSida(html) {

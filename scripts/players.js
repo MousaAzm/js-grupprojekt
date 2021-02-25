@@ -2,7 +2,7 @@
 "use strict";
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
 document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
-document.getElementById("mb2").onclick = function() {bytSida("news.html")};
+document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
 
 function bytSida(html) {
     window.location.href = html;
