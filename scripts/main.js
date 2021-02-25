@@ -37,7 +37,7 @@ function bytSida(html) {
 
 function displaydataResult(results){
 results.forEach((result) =>{
-    let parent = document.getElementById("col-4");
+    let parent = document.getElementById("row");
     var child = document.createElement("div");
     var imeg = document.createElement("img");
     var child1 = document.createElement("div");
@@ -48,9 +48,10 @@ results.forEach((result) =>{
     
   imeg.className = "card-img-top";
   child1.className = "card-body";
-  child.className = "card";
+  child.className = "col-4";
   pa.className ="card-text"
   imeg.alt = "Card image cap";
+  child.id = "cards";
 
 
     imeg.src = result.image;
@@ -60,7 +61,7 @@ results.forEach((result) =>{
     
    // searchbtn.onclick= openUrl(result.url);
 
-if(result.image == null){
+if(result.image == null ){
     console.log("No Pic");
 }
   
