@@ -15,12 +15,19 @@ function bytSida(html) {
     window.location.href = html;
 }
 
+function getTournamentUrl(tournament) {
+  const url = new URL("https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?");
 
-  function searchShow(){
+  url.searchParams.append("l", tournament)
 
-  
-    const api_url = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=Uefa%20Champions%20League";
+  return url;
+}
 
+
+  function searchShow(tournament){
+
+    const api_url = getTournamentUrl(tournament);
+    
     fetch(api_url)
     .then((response) => response.json())
     .then((jsonData) => {
@@ -34,6 +41,7 @@ function bytSida(html) {
 
 
 }
+
 
 function displaydataResult(results){
 results.forEach((result) =>{
@@ -77,8 +85,9 @@ results.forEach((result) =>{
 }
 
 
-window.onload = searchShow();
-    
-  
+window.onload = searchShow("Uefa Champions League");
+//window.onload = searchShow("Uefa Europa League");
+//window.onload = searchShow("coppa italia");
+
 
  

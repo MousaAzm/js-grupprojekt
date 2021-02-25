@@ -1,4 +1,4 @@
-import { gitJSONplayer, getPlayerUrl } from "./gitJSON.js";
+import { gitJSONplayer, getPlayerUrl } from "./getPlayers.js";
 
 "use strict";
 
