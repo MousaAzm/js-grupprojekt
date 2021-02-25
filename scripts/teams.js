@@ -1,20 +1,54 @@
+AOS.init();
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
-document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
+document.getElementById("mb2").onclick = function() {bytSida("news.html")};
 document.getElementById("mb3").onclick = function() {bytSida("players.html")};
 
 function bytSida(html) {
     window.location.href = html;
 }
 
-/*
+
 const searchTeams = document.getElementById("searchBarTeams");
 const searchBtnTeams = document.getElementById("searchBtnTeams");
+const outImgTeam = document.getElementById("imgTeam");
+const outTeamName = document.getElementById("teamN");
+const outSportName = document.getElementById("sportN");
+const outTeamsText = document.getElementById("textTeam");
 
 searchBtnTeams.addEventListener("click", function () {
-  
+  if(searchTeams.value == "") {
+    alert( "Write player name.");
+   
+  } else {
+    getTeamsBySearch();
+    moveCardRight();
+  } 
  
 });
-*/
+
+function getTeamsBySearch() {
+ 
+  fetch(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=${searchTeams.value}`)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Network Response ERROR Try Again!");
+      }
+    })
+    .then((info) => {
+      console.log(info);
+      outImgTeam.src = info.teams[0].strTeamBadge;
+      outTeamName.innerHTML = "Team: " + info.teams[0].strTeam;
+      outSportName.innerHTML = "Sport: " + info.teams[0].strSport;
+      outTeamsText.innerHTML = info.teams[0].strDescriptionEN;
+
+    })
+    .catch((err) => {
+      alert(err);
+    });
+}
+
 
 function getTeamUrl(teamName) {
     const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?");
@@ -73,7 +107,7 @@ function getTeamUrl(teamName) {
       const serverResponse = await fetch(url);
   
       const info = await serverResponse.json();
-      console.log(info);
+     
       tName.innerHTML = "Team: " + info.teams[0].strTeam;
       sport.innerHTML = "Sport: " + info.teams[0].strSport;
       img.src = info.teams[0].strTeamBadge;

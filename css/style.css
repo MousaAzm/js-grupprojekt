@@ -24,35 +24,6 @@
   width: 150px;
 }
 
-
-.bt-sr{
-  animation:  bt-srFrames linear 1s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 0%;
-}
-
-@keyframes  bt-srFrames{
-  0% {
-    transform:  rotate(0deg) ;
-  }
-  20% {
-    transform:  rotate(15deg) ;
-  }
-  40% {
-    transform:  rotate(-10deg) ;
-  }
-  60% {
-    transform:  rotate(5deg) ;
-  }
-  80% {
-    transform:  rotate(-5deg) ;
-  }
-  100% {
-    transform:  rotate(0deg) ;
-  }
-}
-
-
 .landing-layer-top {
   
   text-align: center;
@@ -132,6 +103,7 @@
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  border-bottom: 1px solid #E0A800;
 }
 
 
@@ -143,26 +115,11 @@
   max-height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: swiperFrames linear 0.9s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
 }
-@keyframes swiperFrames{
-  0% {
-    opacity:0;
-    transform:  rotate(-200deg) ;
-  }
-  100% {
-    opacity:1;
-    transform:  rotate(0deg) ;
-  }
-}
-
 
 .container-bg {
  border-bottom: 1px solid #E0A800;
 }
-
 
 .check-card{
   animation: check-cardFrames ease 1s;
@@ -189,9 +146,8 @@
   }
 }
 
-.collapse {
-  margin:35px;
-  
+.team-card {
+  margin-bottom: 35px;
 }
 
 .row-top {
@@ -222,17 +178,14 @@ margin-top: 5px;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
   
+}
 
 
+<<<<<<< HEAD
 
-}
-.col-4 img {
-  max-width: 100%;
-}
-.col-4 .text {
-  padding: 0 20px 20px;
-}
 
 /*flip-card teams page*/
 
+=======
+>>>>>>> 9033de0794be3b9cf1ee715cbd74e5416245b190
 

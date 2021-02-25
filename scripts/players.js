@@ -11,14 +11,14 @@ function bytSida(html) {
 const searchPlayers = document.getElementById("searchBarPlayers");
 const searchButtonPlayers = document.getElementById("searchBtnPlyers");
 
-
 searchButtonPlayers.addEventListener("click", function () {
   if(searchPlayers.value == "") {
     alert( "Write player name.");
    
   } else {
-    moveCardRight();
     getPlayersBySearch();
+    moveCardRight();
+    
   } 
 });
 

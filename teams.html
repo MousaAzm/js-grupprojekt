@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/teams.js" defer="true"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Football</title>
 </head>
 <body>
@@ -39,97 +40,109 @@
         <div style="color: #E0A800;">Champions</div> 
         <div>League</div> 
     </div>
-     <section>
-       <div class="continer">
-      
-       </div>
-     </section>
-     <!---->
-     <div class="container container-bg">      
-      <div class="row row-top ">
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-            <img class="card-img-top " src="" alt="Card image team" id="teamImg1">
-            <div class="doTeam" id="teamN1"></div>
-            <div class="doTeam" id="sportN1"></div>
-            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText1" >Show More</button>
-            <div class="collapse" id="teamText1"></div>
+    <section>
+      <div class="container container-bg">      
+        <div class="row row-top">
+             <div class="col-md-4 offset-4">
+               <div class="card card-deck bg-transparent text-white border-white check-card" id="showCardTeam">
+                 <img class="card-img-top" src="img/gallery/sports.jpg" alt="Card image cap" id="imgTeam">
+                 <div class="doTeam" id="teamN"></div>
+                 <div class="doTeam" id="sportN"></div>
+                 <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#textTeam">Show More</button>
+                 <div class="collapse" id="textTeam"></div>
+               </div> 
+             </div>   
+         </div>     
+      </div>
+    </section>
+ <!--Gallery-->
+ <section>
+  <div class="container container-bg">      
+    <div class="row row-top">
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+          <img class="card-img-top " src="" alt="Card image team" id="teamImg1">
+          <div class="doTeam" id="teamN1"></div>
+          <div class="doTeam" id="sportN1"></div>
+          <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText1" >Show More</button>
+          <div class="collapse" id="teamText1"></div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <img class="card-img-top " src="" alt="Card image team" id="teamImg2">
+            <div class="doTeam" id="teamN2"></div>
+            <div class="doTeam" id="sportN2"></div>
+            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText2" >Show More</button>
+            <div class="collapse" id="teamText2"></div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+          <img class="card-img-top " src="" alt="Card image team" id="teamImg3">
+          <div class="doTeam" id="teamN3"></div>
+          <div class="doTeam" id="sportN3"></div>
+          <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText3" >Show More</button>
+          <div class="collapse" id="teamText3"></div>
         </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white" >
-              <img class="card-img-top " src="" alt="Card image team" id="teamImg2">
-              <div class="doTeam" id="teamN2"></div>
-              <div class="doTeam" id="sportN2"></div>
-              <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText2" >Show More</button>
-              <div class="collapse" id="teamText2"></div>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+          <img class="card-img-top " src="" alt="Card image team" id="teamImg4">
+          <div class="doTeam" id="teamN4"></div>
+          <div class="doTeam" id="sportN4"></div>
+          <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText4" >Show More</button>
+          <div class="collapse" id="teamText4"></div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <img class="card-img-top " src="" alt="Card image team" id="teamImg5">
+            <div class="doTeam" id="teamN5"></div>
+          <div class="doTeam" id="sportN5"></div>
+            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText5" >Show More</button>
+            <div class="collapse" id="teamText5"></div>
         </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-            <img class="card-img-top " src="" alt="Card image team" id="teamImg3">
-            <div class="doTeam" id="teamN3"></div>
-            <div class="doTeam" id="sportN3"></div>
-            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText3" >Show More</button>
-            <div class="collapse" id="teamText3"></div>
-          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+          <img class="card-img-top " src="" alt="Card image team" id="teamImg6">
+          <div class="doTeam" id="teamN6"></div>
+          <div class="doTeam" id="sportN6"></div>
+          <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText6" >Show More</button>
+          <div class="collapse" id="teamText6"></div>
         </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-            <img class="card-img-top " src="" alt="Card image team" id="teamImg4">
-            <div class="doTeam" id="teamN4"></div>
-            <div class="doTeam" id="sportN4"></div>
-            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText4" >Show More</button>
-            <div class="collapse" id="teamText4"></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+          <img class="card-img-top " src="" alt="Card image team" id="teamImg7">
+          <div class="doTeam" id="teamN7"></div>
+          <div class="doTeam" id="sportN7"></div>
+          <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText7" >Show More</button>
+          <div class="collapse" id="teamText7"></div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <img class="card-img-top " src="" alt="Card image team" id="teamImg8">
+            <div class="doTeam" id="teamN8"></div>
+            <div class="doTeam" id="sportN8"></div>
+            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText8" >Show More</button>
+            <div class="collapse" id="teamText8"></div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card bg-transparent text-white border-white" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+          <img class="card-img-top " src="" alt="Card image team" id="teamImg9">
+          <div class="doTeam" id="teamN9"></div>
+          <div class="doTeam" id="sportN9"></div>
+          <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText9" >Show More</button>
+          <div class="collapse" id="teamText9"></div>
         </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-              <img class="card-img-top " src="" alt="Card image team" id="teamImg5">
-              <div class="doTeam" id="teamN5"></div>
-            <div class="doTeam" id="sportN5"></div>
-              <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText5" >Show More</button>
-              <div class="collapse" id="teamText5"></div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-            <img class="card-img-top " src="" alt="Card image team" id="teamImg6">
-            <div class="doTeam" id="teamN6"></div>
-            <div class="doTeam" id="sportN6"></div>
-            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText6" >Show More</button>
-            <div class="collapse" id="teamText6"></div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-            <img class="card-img-top " src="" alt="Card image team" id="teamImg7">
-            <div class="doTeam" id="teamN7"></div>
-            <div class="doTeam" id="sportN7"></div>
-            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText7" >Show More</button>
-            <div class="collapse" id="teamText7"></div>
-        </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-              <img class="card-img-top " src="" alt="Card image team" id="teamImg8">
-              <div class="doTeam" id="teamN8"></div>
-              <div class="doTeam" id="sportN8"></div>
-              <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText8" >Show More</button>
-              <div class="collapse" id="teamText8"></div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card check-card bg-transparent text-white border-white">
-            <img class="card-img-top " src="" alt="Card image team" id="teamImg9">
-            <div class="doTeam" id="teamN9"></div>
-            <div class="doTeam" id="sportN9"></div>
-            <button class="btn btn-outline-light btn-block" data-toggle="collapse" data-target="#teamText9" >Show More</button>
-            <div class="collapse" id="teamText9"></div>
-          </div>
-        </div>
-      </div>    
-    </div>  
+      </div>
+    </div>    
+  </div>
+</section>
 <!--footer-->       
 <footer> 
       <div class="container">
