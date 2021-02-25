@@ -7,8 +7,27 @@ document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
 
 document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
 
+const UCL = "Uefa Champions League";
 
 
+
+function chooseTour() {
+  let tournaments  = prompt('Tournament selection', "Uefa Champions League");
+
+  if(tournaments === "Uefa Europa League") {
+    document.getElementById("champ").innerText = "Europa";
+    return tournaments;
+  }
+  else if(tournaments === "Uefa Champions League") {
+    return tournaments;
+
+  } else {
+    return UCL;
+  
+}
+}
+
+let choosenTour = chooseTour();
 
 
 function bytSida(html) {
@@ -85,7 +104,7 @@ results.forEach((result) =>{
 }
 
 
-window.onload = searchShow("Uefa Champions League");
+window.onload = searchShow(choosenTour);
 //window.onload = searchShow("Uefa Europa League");
 //window.onload = searchShow("coppa italia");
 
