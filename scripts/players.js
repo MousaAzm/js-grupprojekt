@@ -1,5 +1,7 @@
+import { gitJSONplayer, getPlayerUrl } from "./gitJSON.js";
 
 "use strict";
+
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
 document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
 document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
@@ -11,12 +13,15 @@ function bytSida(html) {
 const searchPlayers = document.getElementById("searchBarPlayers");
 const searchButtonPlayers = document.getElementById("searchBtnPlyers");
 
+const img1 = document.getElementById("img1");
+const outputCard1 = document.querySelector("#text");
+
 searchButtonPlayers.addEventListener("click", function () {
   if(searchPlayers.value == "") {
     alert( "Write player name.");
    
   } else {
-    getPlayersBySearch();
+    getPlayersBySearch(searchPlayers.value);
     moveCardRight();
     
   } 
@@ -24,9 +29,10 @@ searchButtonPlayers.addEventListener("click", function () {
 
 
 
-function getPlayersBySearch() {
- 
-  fetch(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=${searchPlayers.value}`)
+function getPlayersBySearch(player) {
+
+  //fetch(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=${searchPlayers.value}`)
+  fetch(getPlayerUrl(player))
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -47,32 +53,6 @@ function getPlayersBySearch() {
       alert(err);
     });
 }
-
-function getPlayerUrl(player) {
-  const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?");
-
-  url.searchParams.append("p", player)
-
-  return url;
-}
-
-
-const outputCard1 = document.querySelector("#text");
-const img1 = document.getElementById("img1");
-async function gitJSONplayer (output, img, player) {
-
-  const url = getPlayerUrl(player)
-
-  const serverResponse = await fetch(url);
-
-  const info = await serverResponse.json();
-  
-  output.innerHTML = info.player[0].strDescriptionEN;
-
-  img.src = info.player[0].strRender;
-
-};
-
 
 const btnImg_1 = document.getElementById("btnImg1");
 btnImg_1.addEventListener("click", function () {
