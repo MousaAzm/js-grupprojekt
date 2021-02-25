@@ -20,15 +20,15 @@ searchBtnTeams.addEventListener("click", function () {
     alert( "Write player name.");
    
   } else {
-    getTeamsBySearch();
+    getTeamsBySearch(searchTeams.value);
     moveCardRight();
   } 
  
 });
 
-function getTeamsBySearch() {
+function getTeamsBySearch(team) {
  
-  fetch(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=${searchTeams.value}`)
+  fetch(getTeamUrl(team))
     .then((response) => {
       if (response.ok) {
         return response.json();

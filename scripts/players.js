@@ -1,4 +1,4 @@
-import { gitJSONplayer, getPlayerUrl } from "./getPlayers.js";
+import { gitJSONplayer, getPlayerUrl, getPlayersBySport } from "./getPlayers.js";
 
 "use strict";
 
@@ -27,11 +27,10 @@ searchButtonPlayers.addEventListener("click", function () {
   } 
 });
 
-
+getPlayersBySearch("Ronaldinho");
 
 function getPlayersBySearch(player) {
 
-  //fetch(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=${searchPlayers.value}`)
   fetch(getPlayerUrl(player))
     .then((response) => {
       if (response.ok) {
@@ -54,10 +53,12 @@ function getPlayersBySearch(player) {
     });
 }
 
+//getPlayersBySport("Lionel Messi");
+
 const btnImg_1 = document.getElementById("btnImg1");
 btnImg_1.addEventListener("click", function () {
   moveCardLeft();
-  gitJSONplayer(outputCard1, img1, "Lionel Messi");
+  getPlayersBySport(outputCard1, img1, "Lionel Messi");
   
 });
 
@@ -65,57 +66,57 @@ btnImg_1.addEventListener("click", function () {
 const btnImg_2 = document.getElementById("btnImg2");
 btnImg_2.addEventListener("click", function () {
   moveCardRight();
-  gitJSONplayer(outputCard1, img1, "Cristiano Ronaldo");
+  getPlayersBySport(outputCard1, img1, "Cristiano Ronaldo");
 });
 
 
 const btnImg_3 = document.getElementById("btnImg3");
 btnImg_3.addEventListener("click", function () {
   moveCardLeft();
-  gitJSONplayer(outputCard1, img1, "Neymar");
+  getPlayersBySport(outputCard1, img1, "Neymar");
 });
 
 
 const btnImg_4 = document.getElementById("btnImg4");
 btnImg_4.addEventListener("click", function () {
   moveCardRight();
-  gitJSONplayer(outputCard1, img1, "Terence Crawford");
+  getPlayersBySport(outputCard1, img1, "Terence Crawford");
 });
 
 const btnImg_5 = document.getElementById("btnImg5");
 btnImg_5.addEventListener("click", function () {
   moveCardLeft();
-  gitJSONplayer(outputCard1, img1, "LeBron James");
+  getPlayersBySport(outputCard1, img1, "LeBron James");
 });
 
 const btnImg_6 = document.getElementById("btnImg6");
 btnImg_6.addEventListener("click", function () {
   moveCardRight();
-  gitJSONplayer(outputCard1, img1, "Kevin De Bruyne");
+  getPlayersBySport(outputCard1, img1, "Kevin De Bruyne");
 });
 
 const btnImg_7 = document.getElementById("btnImg7");
 btnImg_7.addEventListener("click", function () {
   moveCardLeft();
-  gitJSONplayer(outputCard1, img1, "George Kittle");
+  getPlayersBySport(outputCard1, img1, "George Kittle");
 });
 
 const btnImg_8 = document.getElementById("btnImg8");
 btnImg_8.addEventListener("click", function () {
   moveCardRight();
-  gitJSONplayer(outputCard1, img1, "Mookie Betts");
+  getPlayersBySport(outputCard1, img1, "Mookie Betts");
 });
 
 const btnImg_9 = document.getElementById("btnImg9");
 btnImg_9.addEventListener("click", function () {
   moveCardLeft();
-  gitJSONplayer(outputCard1, img1, "primoz roglic");
+  getPlayersBySport(outputCard1, img1, "primoz roglic");
 });
 
 const btnImg_10 = document.getElementById("btnImg10");
 btnImg_10.addEventListener("click", function () {
   moveCardRight();
-  gitJSONplayer(outputCard1, img1, "Drew Doughty");
+  getPlayersBySport(outputCard1, img1, "Drew Doughty");
 });
 
 
