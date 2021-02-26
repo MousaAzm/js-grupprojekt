@@ -54,43 +54,43 @@ btnImg_3.addEventListener("click", function () {
 const btnImg_4 = document.getElementById("btnImg4");
 btnImg_4.addEventListener("click", function () {
   moveCardRight();
-  getPlayersBySport(outputCard1, img1, "Terence Crawford");
+  getPlayersBySport(outputCard1, img1, "kylian mbappé");
 });
 
 const btnImg_5 = document.getElementById("btnImg5");
 btnImg_5.addEventListener("click", function () {
   moveCardLeft();
-  getPlayersBySport(outputCard1, img1, "LeBron James");
+  getPlayersBySport(outputCard1, img1, "zlatan ibrahimović");
 });
 
 const btnImg_6 = document.getElementById("btnImg6");
 btnImg_6.addEventListener("click", function () {
   moveCardRight();
-  getPlayersBySport(outputCard1, img1, "Kevin De Bruyne");
+  getPlayersBySport(outputCard1, img1, "Erling haaland");
 });
 
 const btnImg_7 = document.getElementById("btnImg7");
 btnImg_7.addEventListener("click", function () {
   moveCardLeft();
-  getPlayersBySport(outputCard1, img1, "George Kittle");
+  getPlayersBySport(outputCard1, img1, "Mohamed Salah");
 });
 
 const btnImg_8 = document.getElementById("btnImg8");
 btnImg_8.addEventListener("click", function () {
   moveCardRight();
-  getPlayersBySport(outputCard1, img1, "Mookie Betts");
+  getPlayersBySport(outputCard1, img1, "Robert Lewandowski");
 });
 
 const btnImg_9 = document.getElementById("btnImg9");
 btnImg_9.addEventListener("click", function () {
   moveCardLeft();
-  getPlayersBySport(outputCard1, img1, "primoz roglic");
+  getPlayersBySport(outputCard1, img1, "Sergio Ramos");
 });
 
 const btnImg_10 = document.getElementById("btnImg10");
 btnImg_10.addEventListener("click", function () {
   moveCardRight();
-  getPlayersBySport(outputCard1, img1, "Drew Doughty");
+  getPlayersBySport(outputCard1, img1, "Sadio Mané");
 });
 
 
