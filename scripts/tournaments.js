@@ -50,9 +50,7 @@ function getTournamentUrl(tournament) {
     fetch(api_url)
     .then((response) => response.json())
     .then((jsonData) => {
-        console.log(jsonData);
         results = jsonData.teams;
-        console.log(results);
         displaydataResult(results);
     });
 
