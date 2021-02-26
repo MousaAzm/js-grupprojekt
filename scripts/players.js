@@ -1,4 +1,4 @@
-import { gitJSONplayer, getPlayerUrl, getPlayersBySport } from "./getPlayers.js";
+import { getPlayersBySearch, getPlayerUrl, getPlayersBySport } from "./getPlayers.js";
 
 "use strict";
 
@@ -21,39 +21,13 @@ searchButtonPlayers.addEventListener("click", function () {
     alert( "Write player name.");
    
   } else {
-    getPlayersBySearch(searchPlayers.value);
+    getPlayersBySearch(outputCard1, img1, searchPlayers.value);
     moveCardRight();
     
   } 
 });
 
-getPlayersBySearch("Ronaldinho");
-
-function getPlayersBySearch(player) {
-
-  fetch(getPlayerUrl(player))
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Network Response ERROR Try Again!");
-      }
-    })
-    .then((info) => {
-      
-      let imgP = info.player[0].strRender;
-      let infoP = info.player[0].strDescriptionEN;
-
-      img1.src = imgP;
-      outputCard1.innerHTML = infoP;
-
-    })
-    .catch((err) => {
-      alert(err);
-    });
-}
-
-//getPlayersBySport("Lionel Messi");
+getPlayersBySearch(outputCard1, img1, "Ronaldinho");
 
 const btnImg_1 = document.getElementById("btnImg1");
 btnImg_1.addEventListener("click", function () {
