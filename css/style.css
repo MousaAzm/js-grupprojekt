@@ -99,6 +99,8 @@
   transform: scale(1.2);
 }
 
+
+
 .swiper-container {
   width: 100%;
   padding-top: 50px;
@@ -158,6 +160,16 @@
 .doTeam {
   text-align: center;
   font-size: 15px;
+}
+
+.leagues-demo div {
+  text-align: center;
+}
+.leagues {
+  margin: 35px;
+  font-size: 45px;
+  color: #fff;
+
 }
 footer {
   color: #fff;

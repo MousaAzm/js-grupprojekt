@@ -12,7 +12,6 @@ function bytSida(html) {
 
 const searchPlayers = document.getElementById("searchBarPlayers");
 const searchButtonPlayers = document.getElementById("searchBtnPlyers");
-
 const img1 = document.getElementById("img1");
 const outputCard1 = document.querySelector("#text");
 
@@ -29,6 +28,9 @@ searchButtonPlayers.addEventListener("click", function () {
 
 getPlayersBySearch(outputCard1, img1, "Ronaldinho");
 
+
+
+// show info about player with click on pic(10)
 const btnImg_1 = document.getElementById("btnImg1");
 btnImg_1.addEventListener("click", function () {
   moveCardLeft();
@@ -94,7 +96,7 @@ btnImg_10.addEventListener("click", function () {
 });
 
 
-
+//animation L
 function moveCardLeft(){
   document.getElementById("showCard").animate([
     { transform: 'translatex(-100%)' },
@@ -105,6 +107,7 @@ function moveCardLeft(){
   });
 }
 
+//animation R
 function moveCardRight(){
   document.getElementById("showCard").animate([
     { transform: 'translatex(100%)' },
@@ -115,8 +118,8 @@ function moveCardRight(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+//gallery pic
+document.addEventListener('DOMContentLoaded', function() { 
   let swiper = new Swiper('.swiper-container', {
      effect: 'coverflow',
      grabCursor: true,
