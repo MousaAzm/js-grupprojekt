@@ -22,8 +22,6 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
       .then((info) => {
         
         if(info.player[0].strSport === "Soccer"){
-        let team = info.player[0].strTeam;
-        alert("Playing for: " + team);
         
         output.innerHTML = info.player[0].strDescriptionEN;
         img.src = info.player[0].strRender;

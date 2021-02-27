@@ -30,6 +30,10 @@ getPlayersBySearch(outputCard1, img1, "Ronaldinho");
 
 
 
+
+
+
+
 // show info about player with click on pic(10)
 const btnImg_1 = document.getElementById("btnImg1");
 btnImg_1.addEventListener("click", function () {

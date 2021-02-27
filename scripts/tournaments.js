@@ -54,9 +54,6 @@ function getTournamentUrl(tournament) {
         displaydataResult(results);
     });
 
-
-
-
 }
 
 
