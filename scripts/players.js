@@ -26,11 +26,8 @@ searchButtonPlayers.addEventListener("click", function () {
   } 
 });
 
+
 getPlayersBySearch(outputCard1, img1, "Ronaldinho");
-
-
-
-
 
 
 
