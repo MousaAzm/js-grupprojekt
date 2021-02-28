@@ -26,7 +26,7 @@ function gitJSONLeagues(countryLeaguesNames) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+        
       res = data.countrys;
       creatLeagues(res);
     })

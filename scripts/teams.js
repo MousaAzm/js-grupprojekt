@@ -131,14 +131,14 @@ function gitJSONTeams(countryTeamsNames) {
 //display Teams data in country
 function creatTeams(res){
   res.forEach((info) => {
+
     let colDiv = document.createElement("div");
     let cardDiv = document.createElement("div");
     let doImg = document.createElement("img");
     let doDiv1 = document.createElement("div");
     let doDiv2 = document.createElement("div");
     let doDiv3 = document.createElement("div");
-    let doDiv4 = document.createElement("div");
-
+    
     doImg.src = info.strTeamBadge;
     doDiv1.innerHTML = "Country: " + info.strCountry;
     doDiv2.innerHTML = "Team: " + info.strTeam;
@@ -152,7 +152,7 @@ function creatTeams(res){
     doDiv3.setAttribute("class", "doTeam");
     
     
-    showLeagues.appendChild(colDiv);
+    showTeams.appendChild(colDiv);
     colDiv.appendChild(cardDiv);
     cardDiv.appendChild(doImg);
     cardDiv.appendChild(doDiv1);
@@ -195,7 +195,7 @@ btnTeam5.addEventListener("click", function () {
 
 const btnTeam6 = document.getElementById("btn-team6");
 btnTeam6.addEventListener("click", function () {
-  showLeagues.innerHTML = "";
+  showTeams.innerHTML = "";
   gitJSONTeams("Spain");
 });
 
