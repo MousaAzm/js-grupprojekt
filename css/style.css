@@ -164,15 +164,38 @@
   margin-bottom: 10px;
 }
 
+.teams-demo div {
+  text-align: center;
+}
+
+.teams {
+  margin: 35px;
+  font-size: 45px;
+  color: #fff;
+}
+
+.doLeague {
+  text-align: center;
+  font-size: 15px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .leagues-demo div {
   text-align: center;
 }
 .leagues {
+  border-top: 1px solid #E0A800;
   margin: 35px;
   font-size: 45px;
   color: #fff;
-
 }
+
+
+.dropdown-menu .dropdown-item:hover{
+  background-color: #f3d05b;
+}
+
 footer {
   color: #fff;
   text-align: center;

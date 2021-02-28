@@ -7,6 +7,8 @@ document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
 
 document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
 
+document.getElementById("mb5").onclick = function() {bytSida("Leagues.html")};
+
 
 
 

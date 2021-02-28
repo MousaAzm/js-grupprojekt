@@ -5,6 +5,7 @@ import { getPlayersBySearch, getPlayerUrl, getPlayersBySport } from "./getPlayer
 document.getElementById("mb1").onclick = function() {bytSida("index.html")};
 document.getElementById("mb4").onclick = function() {bytSida("teams.html")};
 document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")};
+document.getElementById("mb5").onclick = function () {bytSida("Leagues.html");};
 
 function bytSida(html) {
     window.location.href = html;
@@ -28,6 +29,15 @@ searchButtonPlayers.addEventListener("click", function () {
 
 
 getPlayersBySearch(outputCard1, img1, "Ronaldinho");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -139,3 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
    });
 
 });
+
+
+

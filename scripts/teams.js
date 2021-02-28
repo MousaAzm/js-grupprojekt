@@ -1,6 +1,7 @@
 document.getElementById("mb1").onclick = function () {bytSida("index.html");};
 document.getElementById("mb2").onclick = function () {bytSida("tournaments.html");};
 document.getElementById("mb3").onclick = function () {bytSida("players.html");};
+document.getElementById("mb5").onclick = function () {bytSida("Leagues.html");};
 
 function bytSida(html) {
   window.location.href = html;
@@ -31,7 +32,7 @@ function getTeamsBySearch(team) {
       return response.json(); 
     })
     .then((data) => {
-      console.log(data);
+      
       outImgTeam.src = data.teams[0].strTeamBadge;
       outTeamName.innerHTML = "Team: " + data.teams[0].strTeam;
       outSportName.innerHTML = "Sport: " + data.teams[0].strSport;
@@ -73,7 +74,7 @@ Promise.all([
     alert(err);
   });
 
-//display Teams data
+//display 9 Teams 
 function creatTeamsInfo(res){
   res.forEach((info) => {
     let colDiv = document.createElement("div");
@@ -100,35 +101,35 @@ function creatTeamsInfo(res){
   });
 }
 
-//Leagues
+//Teams
 
-gitJSONLeagues("United States");
+gitJSONTeams("United States");
 
-const showLeagues = document.getElementById("show-leagues");
-function getLeaguesUrl(countryLeaguesNames) {
+const showTeams = document.getElementById("show-teams");
+function getCountryTeamsUrl(countryTeamsNames) {
   const url = new URL("https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer");
 
-  url.searchParams.append("c", countryLeaguesNames);
+  url.searchParams.append("c", countryTeamsNames);
 
   return url;
 }
 
 //fetch
-function gitJSONLeagues(countryLeaguesNames) {
-  const url = getLeaguesUrl(countryLeaguesNames);
+function gitJSONTeams(countryTeamsNames) {
+  const url = getCountryTeamsUrl(countryTeamsNames);
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       res = data.teams;
-      creatLeaguesInfo(res);
+      creatTeams(res);
     })
     .catch((err) => {
       alert(err);
     });
 }
 
-//display Leagues data
-function creatLeaguesInfo(res){
+//display Teams data in country
+function creatTeams(res){
   res.forEach((info) => {
     let colDiv = document.createElement("div");
     let cardDiv = document.createElement("div");
@@ -140,9 +141,8 @@ function creatLeaguesInfo(res){
 
     doImg.src = info.strTeamBadge;
     doDiv1.innerHTML = "Country: " + info.strCountry;
-    doDiv2.innerHTML = "League: " + info.strLeague;
-    doDiv3.innerHTML = "Team: " + info.strTeam;
-    doDiv4.innerHTML = "Sport: " + info.strSport;
+    doDiv2.innerHTML = "Team: " + info.strTeam;
+    doDiv3.innerHTML = "Sport: " + info.strSport;
 
     colDiv.setAttribute("class", "col-md-3");
     $(cardDiv).attr({class: "card team-card bg-transparent text-white border-white", "data-aos": "fade-up", "data-aos-duration": "2000"});
@@ -150,7 +150,7 @@ function creatLeaguesInfo(res){
     doDiv1.setAttribute("class", "doTeam");
     doDiv2.setAttribute("class", "doTeam");
     doDiv3.setAttribute("class", "doTeam");
-    doDiv4.setAttribute("class", "doTeam");
+    
     
     showLeagues.appendChild(colDiv);
     colDiv.appendChild(cardDiv);
@@ -158,45 +158,45 @@ function creatLeaguesInfo(res){
     cardDiv.appendChild(doDiv1);
     cardDiv.appendChild(doDiv2);
     cardDiv.appendChild(doDiv3);
-    cardDiv.appendChild(doDiv4);
+    
   });
 }
 
 
-const btnLeag1 = document.getElementById("btn-leag1");
-btnLeag1.addEventListener("click", function () {
-  showLeagues.innerHTML = "";
-  gitJSONLeagues("United States");
+const btnTeam1 = document.getElementById("btn-team1");
+btnTeam1.addEventListener("click", function () {
+  showTeams.innerHTML = "";
+  gitJSONTeams("United States");
 });
 
-const btnLeag2 = document.getElementById("btn-leag2");
-btnLeag2.addEventListener("click", function () {
-  showLeagues.innerHTML = "";
-  gitJSONLeagues("England");
+const btnTeam2 = document.getElementById("btn-team2");
+btnTeam2.addEventListener("click", function () {
+  showTeams.innerHTML = "";
+  gitJSONTeams("England");
 });
 
-const btnLeag3 = document.getElementById("btn-leag3");
-btnLeag3.addEventListener("click", function () {
-  showLeagues.innerHTML = "";
-  gitJSONLeagues("France");
+const btnTeam3 = document.getElementById("btn-team3");
+btnTeam3.addEventListener("click", function () {
+  showTeams.innerHTML = "";
+  gitJSONTeams("France");
 });
 
-const btnLeag4 = document.getElementById("btn-leag4");
-btnLeag4.addEventListener("click", function () {
-  showLeagues.innerHTML = "";
-  gitJSONLeagues("Germany");
+const btnTeam4 = document.getElementById("btn-team4");
+btnTeam4.addEventListener("click", function () {
+  showTeams.innerHTML = "";
+  gitJSONTeams("Germany");
 });
 
-const btnLeag5 = document.getElementById("btn-leag5");
-btnLeag5.addEventListener("click", function () {
-  showLeagues.innerHTML = "";
-  gitJSONLeagues("Italy");
+const btnTeam5 = document.getElementById("btn-team5");
+btnTeam5.addEventListener("click", function () {
+  showTeams.innerHTML = "";
+  gitJSONTeams("Italy");
 });
 
-const btnLeag6 = document.getElementById("btn-leag6");
-btnLeag6.addEventListener("click", function () {
+const btnTeam6 = document.getElementById("btn-team6");
+btnTeam6.addEventListener("click", function () {
   showLeagues.innerHTML = "";
-  gitJSONLeagues("Spain");
+  gitJSONTeams("Spain");
 });
 
 //animation
