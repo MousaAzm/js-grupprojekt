@@ -157,16 +157,13 @@
   margin-bottom: 55px;
 }
 
-.doTeam {
+.doTeam, .doLeague, .doTeamsLeague {
   text-align: center;
   font-size: 15px;
   width: 100%;
   margin-bottom: 10px;
 }
 
-.teams-demo div {
-  text-align: center;
-}
 
 .teams {
   margin: 35px;
@@ -174,14 +171,7 @@
   color: #fff;
 }
 
-.doLeague {
-  text-align: center;
-  font-size: 15px;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.leagues-demo div {
+.leagues-demo div, .teams-league-demo div, .teams-demo div {
   text-align: center;
 }
 .leagues {
@@ -191,10 +181,12 @@
   color: #fff;
 }
 
-
-.dropdown-menu .dropdown-item:hover{
-  background-color: #f3d05b;
+.teams-league {
+  margin: 35px;
+  font-size: 45px;
+  color: #fff;
 }
+
 
 footer {
   color: #fff;

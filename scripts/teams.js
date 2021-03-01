@@ -7,8 +7,7 @@ function bytSida(html) {
   window.location.href = html;
 }
 
-const searchTeams = document.getElementById("searchBarTeams");
-const searchBtnTeams = document.getElementById("searchBtnTeams");
+
 const outImgTeam = document.getElementById("imgTeam");
 const outTeamName = document.getElementById("teamN");
 const outSportName = document.getElementById("sportN");
@@ -103,7 +102,7 @@ function creatTeamsInfo(res){
 
 //Teams
 
-gitJSONTeams("United States");
+getJSONTeams("United States");
 
 const showTeams = document.getElementById("show-teams");
 function getCountryTeamsUrl(countryTeamsNames) {
@@ -115,7 +114,7 @@ function getCountryTeamsUrl(countryTeamsNames) {
 }
 
 //fetch
-function gitJSONTeams(countryTeamsNames) {
+function getJSONTeams(countryTeamsNames) {
   const url = getCountryTeamsUrl(countryTeamsNames);
   fetch(url)
     .then((response) => response.json())
@@ -166,37 +165,37 @@ function creatTeams(res){
 const btnTeam1 = document.getElementById("btn-team1");
 btnTeam1.addEventListener("click", function () {
   showTeams.innerHTML = "";
-  gitJSONTeams("United States");
+  getJSONTeams("United States");
 });
 
 const btnTeam2 = document.getElementById("btn-team2");
 btnTeam2.addEventListener("click", function () {
   showTeams.innerHTML = "";
-  gitJSONTeams("England");
+  getJSONTeams("England");
 });
 
 const btnTeam3 = document.getElementById("btn-team3");
 btnTeam3.addEventListener("click", function () {
   showTeams.innerHTML = "";
-  gitJSONTeams("France");
+  getJSONTeams("France");
 });
 
 const btnTeam4 = document.getElementById("btn-team4");
 btnTeam4.addEventListener("click", function () {
   showTeams.innerHTML = "";
-  gitJSONTeams("Germany");
+  getJSONTeams("Germany");
 });
 
 const btnTeam5 = document.getElementById("btn-team5");
 btnTeam5.addEventListener("click", function () {
   showTeams.innerHTML = "";
-  gitJSONTeams("Italy");
+  getJSONTeams("Italy");
 });
 
 const btnTeam6 = document.getElementById("btn-team6");
 btnTeam6.addEventListener("click", function () {
   showTeams.innerHTML = "";
-  gitJSONTeams("Spain");
+  getJSONTeams("Spain");
 });
 
 //animation

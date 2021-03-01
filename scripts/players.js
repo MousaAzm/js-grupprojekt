@@ -11,38 +11,10 @@ function bytSida(html) {
     window.location.href = html;
 }
 
-const searchPlayers = document.getElementById("searchBarPlayers");
-const searchButtonPlayers = document.getElementById("searchBtnPlyers");
 const img1 = document.getElementById("img1");
 const outputCard1 = document.querySelector("#text");
-
-
-
-searchButtonPlayers.addEventListener("click", function () {
-  let searchV = searchPlayers.value;
-  alert(searchV);
-  if(searchV == "") {
-    alert( "Write player name.");
-   
-  } else {
-    getPlayersBySearch(outputCard1, img1, searchV);
-    moveCardRight();
-    
-  } 
-});
-
-
 getPlayersBySearch(outputCard1, img1, "Buffon");
-
-
-
-
-
-
-
-
-
-
+//
 
 
 // show info about player with click on pic(10)
