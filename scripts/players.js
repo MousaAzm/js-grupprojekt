@@ -32,7 +32,7 @@ searchButtonPlayers.addEventListener("click", function () {
 });
 
 
-getPlayersBySearch(outputCard1, img1, "Ronaldinho");
+getPlayersBySearch(outputCard1, img1, "Buffon");
 
 
 

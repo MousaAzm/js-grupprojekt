@@ -23,18 +23,17 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
         
         if(info.player[0].strSport === "Soccer"){
         
-        output.innerHTML = info.player[0].strDescriptionEN;
-        img.src = info.player[0].strRender;
+          let dateborn = info.player[0].dateBorn; 
+          let res = dateborn.split("-");
+          let date = res[0];
+          let age = 2021 - date;
+          output.innerHTML = "Name: " + info.player[0].strPlayer + "<br>" + "Age: " + age + " (" +  info.player[0].dateBorn + ")" + "<br>" + "Team: "+ info.player[0].strTeam + "<br>" + "Nationality: " + info.player[0].strNationality
+          + "<br>" + "Position: " + info.player[0].strPosition + "<br>" + "Height: " + info.player[0].strHeight
+          + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" +  "Description: " +info.player[0].strDescriptionEN;
+          img.src = info.player[0].strRender;
         
         } else {
           alert("Only more information about football players");
-          /*
-          let sport = info.player[0].strSport;
-          alert(sport + " is my sport");
-
-          output.innerHTML = info.player[0].strDescriptionEN;
-          img.src = info.player[0].strRender;
-          */
         }
       })
       .catch((err) => {
@@ -54,7 +53,13 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
       })
       .then((info) => {
         
-        output.innerHTML = info.player[0].strDescriptionEN;
+        let dateborn = info.player[0].dateBorn; 
+        let res = dateborn.split("-");
+        let date = res[0];
+        let age = 2021 - date;
+        output.innerHTML = "Name: " + info.player[0].strPlayer + "<br>" + "Age: " + age + " (" +  info.player[0].dateBorn + ")" + "<br>" + "Team: "+ info.player[0].strTeam + "<br>" + "Nationality: " + info.player[0].strNationality
+        + "<br>" + "Position: " + info.player[0].strPosition + "<br>" + "Height: " + info.player[0].strHeight
+        + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" +  "Description: " +info.player[0].strDescriptionEN;
         img.src = info.player[0].strRender;
   
       })
