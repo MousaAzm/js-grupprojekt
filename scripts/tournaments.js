@@ -9,19 +9,25 @@ document.getElementById("mb2").onclick = function() {bytSida("tournaments.html")
 
 document.getElementById("mb5").onclick = function () {bytSida("Leagues.html")};
 
-const UCL = "Uefa Champions League";
+let UCL = "Uefa Europa League";
 
 
+document.getElementById("champ").onclick = function () {chooseTour(UCL)};
 
-function chooseTour() {
-  let tournaments  = prompt('Tournament selection', "Uefa Champions League");
+function chooseTour(choosenTour) {
+  let tournaments  = choosenTour;
 
-  if(tournaments === "Uefa Europa League") {
+  if(choosenTour === "Uefa Europa League") {
     document.getElementById("champ").innerText = "Europa";
-    return tournaments;
+    parent.innerHTML = "";
+    searchShow(UCL);
+    UCL = "Uefa Champions League"
   }
   else if(tournaments === "Uefa Champions League") {
-    return tournaments;
+    document.getElementById("champ").innerText = "Champions";
+    parent.innerHTML = "";
+    searchShow(tournaments)
+    UCL = "Uefa Europa League";
 
   } else {
     return UCL;
@@ -29,7 +35,7 @@ function chooseTour() {
 }
 }
 
-let choosenTour = chooseTour();
+//let choosenTour = chooseTour(UCL);
 
 
 function bytSida(html) {
@@ -58,10 +64,11 @@ function getTournamentUrl(tournament) {
 
 }
 
+let parent = document.getElementById("row");
 
 function displaydataResult(results){
 results.forEach((result) =>{
-    let parent = document.getElementById("row");
+    //let parent = document.getElementById("row");
     var child = document.createElement("div");
     var imeg = document.createElement("img");
     var child1 = document.createElement("div");
@@ -101,8 +108,8 @@ results.forEach((result) =>{
 }
 
 
-window.onload = searchShow(choosenTour);
-//window.onload = searchShow("Uefa Europa League");
+//window.onload = searchShow(chooseTour(UCL));
+window.onload = searchShow("Uefa Champions League");
 //window.onload = searchShow("coppa italia");
 
 
