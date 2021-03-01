@@ -29,7 +29,7 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
           let age = 2021 - date;
           output.innerHTML = "Name: " + info.player[0].strPlayer + "<br>" + "Age: " + age + " (" +  info.player[0].dateBorn + ")" + "<br>" + "Team: "+ info.player[0].strTeam + "<br>" + "Nationality: " + info.player[0].strNationality
           + "<br>" + "Position: " + info.player[0].strPosition + "<br>" + "Height: " + info.player[0].strHeight
-          + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" +  "Description: " +info.player[0].strDescriptionEN;
+          + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" + info.player[0].strDescriptionEN;
           img.src = info.player[0].strRender;
         
         } else {
@@ -59,7 +59,7 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
         let age = 2021 - date;
         output.innerHTML = "Name: " + info.player[0].strPlayer + "<br>" + "Age: " + age + " (" +  info.player[0].dateBorn + ")" + "<br>" + "Team: "+ info.player[0].strTeam + "<br>" + "Nationality: " + info.player[0].strNationality
         + "<br>" + "Position: " + info.player[0].strPosition + "<br>" + "Height: " + info.player[0].strHeight
-        + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" +  "Description: " +info.player[0].strDescriptionEN;
+        + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" + info.player[0].strDescriptionEN;
         img.src = info.player[0].strRender;
   
       })
