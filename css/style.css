@@ -165,13 +165,13 @@
 }
 
 
-.teams {
+.teams,.teams-league, .match {
   margin: 35px;
   font-size: 45px;
   color: #fff;
 }
 
-.leagues-demo div, .teams-league-demo div, .teams-demo div {
+.leagues-demo div, .teams-league-demo div, .teams-demo div, .match {
   text-align: center;
 }
 .leagues {
@@ -181,11 +181,6 @@
   color: #fff;
 }
 
-.teams-league {
-  margin: 35px;
-  font-size: 45px;
-  color: #fff;
-}
 
 
 footer {
@@ -194,7 +189,7 @@ footer {
   margin-top: 20px;
 }
 
-#row {
+#row , #row1{
   border-bottom: 1px solid #E0A800;
 }
 .col-4{
