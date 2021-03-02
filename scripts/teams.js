@@ -8,43 +8,6 @@ function bytSida(html) {
 }
 
 
-const outImgTeam = document.getElementById("imgTeam");
-const outTeamName = document.getElementById("teamN");
-const outSportName = document.getElementById("sportN");
-const outTeamsText = document.getElementById("textTeam");
-
-getTeamsBySearch("Atlanta United");
-  
-function getTeamsUrl(team) {
-  const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?");
-
-  url.searchParams.append("t", team);
-
-  return url;
-}
-
-function getTeamsBySearch(team) {
-  const url = getTeamsUrl(team);
-  fetch(url)
-    .then((response) => {
-      
-      return response.json(); 
-    })
-    .then((data) => {
-      
-      outImgTeam.src = data.teams[0].strTeamBadge;
-      outTeamName.innerHTML = "Team: " + data.teams[0].strTeam;
-      outSportName.innerHTML = "Sport: " + data.teams[0].strSport;
-      outTeamsText.innerHTML = data.teams[0].strDescriptionEN;
-    })
-    .catch((err) => {
-      alert(err);
-    });
-}
-
-
-
-
 //show teams (multiple api)
 const showInfo = document.getElementById("show-team");
 Promise.all([
@@ -197,6 +160,58 @@ btnTeam6.addEventListener("click", function () {
   showTeams.innerHTML = "";
   getJSONTeams("Spain");
 });
+
+
+// search team 
+const letters = /([0-9?=+-])/;
+const searchBarTeam = document.getElementById("searchBarTeam");
+const searchbtnTeam = document.getElementById("searchBtnTeam");
+const outImgTeam = document.getElementById("imgTeam");
+const outTeamName = document.getElementById("teamN");
+const outSportName = document.getElementById("sportN");
+const outTeamsText = document.getElementById("textTeam");
+
+searchbtnTeam.addEventListener("click", () => {
+  if(searchBarTeam.value.match(letters)) {
+    alert( "Check your team name.");
+  } else {
+    getTeamsBySearch(searchBarTeam.value);  
+  } 
+});
+
+  
+function getTeamsUrl(team) {
+  const url = new URL("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?");
+
+  url.searchParams.append("t", team);
+
+  return url;
+}
+
+function getTeamsBySearch(team) {
+  const url = getTeamsUrl(team);
+  fetch(url)
+    .then((response) => {
+      
+      return response.json(); 
+    })
+    .then((data) => {
+      
+      if(data.teams[0].strSport === "Soccer"){
+
+      outImgTeam.src = data.teams[0].strTeamBadge;
+      outTeamName.innerHTML = "Team: " + data.teams[0].strTeam;
+      outSportName.innerHTML = "Sport: " + data.teams[0].strSport;
+      outTeamsText.innerHTML = data.teams[0].strDescriptionEN;
+   
+      } else {
+      alert("Only more information about football teams");
+      }
+    })
+    .catch((err) => {
+      alert(err);
+    });
+}
 
 //animation
 AOS.init();

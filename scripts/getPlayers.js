@@ -1,4 +1,4 @@
-export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
+export { getPlayersInfo, getPlayerUrl };
 
 
   function getPlayerUrl(player) {
@@ -9,7 +9,7 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
     return url;
   }
 
-  function getPlayersBySport(output, img, player) {
+  function getPlayersInfo(output, img, player) {
 
     fetch(getPlayerUrl(player))
       .then((response) => {
@@ -41,29 +41,3 @@ export { getPlayersBySearch, getPlayerUrl, getPlayersBySport };
       });
   }
 
-  function getPlayersBySearch(output, img, player) {
-
-    fetch(getPlayerUrl(player))
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Network Response ERROR Try Again!");
-        }
-      })
-      .then((info) => {
-        
-        let dateborn = info.player[0].dateBorn; 
-        let res = dateborn.split("-");
-        let date = res[0];
-        let age = 2021 - date;
-        output.innerHTML = "Name: " + info.player[0].strPlayer + "<br>" + "Age: " + age + " (" +  info.player[0].dateBorn + ")" + "<br>" + "Team: "+ info.player[0].strTeam + "<br>" + "Nationality: " + info.player[0].strNationality
-        + "<br>" + "Position: " + info.player[0].strPosition + "<br>" + "Height: " + info.player[0].strHeight
-        + "<br>" + "Weight: " + info.player[0].strWeight + "<br>" + "<br>" + info.player[0].strDescriptionEN;
-        img.src = info.player[0].strRender;
-  
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  }

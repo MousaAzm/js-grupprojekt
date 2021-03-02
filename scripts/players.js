@@ -1,4 +1,4 @@
-import { getPlayersBySearch, getPlayerUrl, getPlayersBySport } from "./getPlayers.js";
+import { getPlayersInfo} from "./getPlayers.js";
 
 "use strict";
 
@@ -11,11 +11,21 @@ function bytSida(html) {
     window.location.href = html;
 }
 
+const letters = /([0-9?=+-])/;
+const searchBarPlayer = document.getElementById("searchBarPlayer");
+const searchbtnPlayer = document.getElementById("searchBtnPlayer");
 const img1 = document.getElementById("img1");
 const outputCard1 = document.querySelector("#text");
-getPlayersBySearch(outputCard1, img1, "Buffon");
-//
 
+searchbtnPlayer.addEventListener("click", () => {
+  if(searchBarPlayer.value.match(letters)) {
+    alert( "Check your players name.");
+  } else {
+    
+    getPlayersInfo(outputCard1, img1, searchBarPlayer.value);
+    moveCardRight();
+  } 
+});
 
 // show info about player with click on pic(10)
 const btnImg_1 = document.getElementById("btnImg1");
