@@ -69,7 +69,7 @@ let parent = document.getElementById("row");
 function displaydataResult(results){
 results.forEach((result) =>{
     //let parent = document.getElementById("row");
-    var child = document.createElement("div");
+    var child = document.createElement("a");
     var imeg = document.createElement("img");
     var child1 = document.createElement("div");
     var title = document.createElement("h2");
@@ -83,7 +83,7 @@ results.forEach((result) =>{
   pa.className ="card-text"
   imeg.alt = "Card image cap";
 
-
+   child.href = "https://" + result.strWebsite;
     imeg.src = result.strTeamBadge;
     title.innerText = result.strTeam;
     pa.innerText = result.strLeague;
