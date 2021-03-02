@@ -12,7 +12,7 @@ document.getElementById("mb5").onclick = function () {bytSida("Leagues.html")};
 let UCL = "Uefa Europa League";
 
 
-document.getElementById("champ").onclick = function () {chooseTour(UCL)};
+
 
 function chooseTour(choosenTour) {
   let tournaments  = choosenTour;
@@ -34,7 +34,7 @@ function chooseTour(choosenTour) {
   
 }
 }
-
+document.getElementById("champ").onclick = function () {chooseTour(UCL)};
 //let choosenTour = chooseTour(UCL);
 
 
@@ -42,12 +42,26 @@ function bytSida(html) {
     window.location.href = html;
 }
 
+
 function getTournamentUrl(tournament) {
   const url = new URL("https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?");
 
   url.searchParams.append("l", tournament)
 
   return url;
+}
+
+
+function getEventUrl(tournament){
+  const url = new URL(
+    "https://www.thesportsdb.com/api/v1/json/1/searchfilename.php?"
+  );
+
+  url.searchParams.append("e", tournament);
+
+  return url;
+
+
 }
 
 
@@ -62,20 +76,31 @@ function getTournamentUrl(tournament) {
         displaydataResult(results);
     });
 
+    const resultApi = getEventUrl(tournament);
+   
+  fetch(resultApi)
+    .then((response) => response.json())
+    .then((jsonData) => {
+      console.log(jsonData);
+      results1 = jsonData.event;
+      console.log(results1);
+      displayMatchresult(results1);
+    });
+
 }
 
 let parent = document.getElementById("row");
 
 function displaydataResult(results){
 results.forEach((result) =>{
-    //let parent = document.getElementById("row");
+    let parent = document.getElementById("row");
     var child = document.createElement("a");
     var imeg = document.createElement("img");
     var child1 = document.createElement("div");
     var title = document.createElement("h2");
     var pa = document.createElement("p");
     var date = document.createElement("h3");
-    //var searchbtn = document.createElement("button");
+  
     
   imeg.className = "card-img-top";
   child1.className = "card-body";
@@ -89,10 +114,10 @@ results.forEach((result) =>{
     pa.innerText = result.strLeague;
     date.innerText = result.intFormedYear;
     
-   // searchbtn.onclick= openUrl(result.url);
+ 
 
 
-    //child.append(searchbtn);
+  
     
     child.append(imeg);
     child1.append(title);
@@ -106,6 +131,52 @@ results.forEach((result) =>{
 });
 
 }
+let parent1 = document.getElementById("row1");
+
+function displayMatchresult(results1) {
+  results1.forEach((result) => {
+   
+    var child = document.createElement("div");
+    var thumb = document.createElement("img");
+    var child1 = document.createElement("div");
+    var title = document.createElement("h2");
+    var stadium = document.createElement("p");
+    var date = document.createElement("h3");
+
+
+    thumb.className = "card-img-top";
+    child1.className = "card-body";
+    child.className = "col-4";
+    stadium.className = "card-text";
+    thumb.alt = "Card image cap";
+    child.id = "cards";
+
+    var imageSrc = result.strThumb;
+    title.innerText = result.strEvent;
+    stadium.innerText = result.strVenue;
+    date.innerText = result.dateEvent;
+    var status = result.strStatus;
+ 
+
+    if (imageSrc == null) {
+
+      thumb.src = "https://s3-eu-west-1.amazonaws.com/manxradionews/884464-1.jpg";
+    }
+    else{
+      thumb.src = imageSrc;
+
+    }
+
+
+      child1.append(thumb);
+      child1.append(title);
+      child1.append(stadium);
+      child1.append(date);
+      child.append(child1);
+      parent1.append(child);
+  });
+}
+
 
 
 //window.onload = searchShow(chooseTour(UCL));
