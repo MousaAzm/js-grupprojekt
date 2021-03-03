@@ -35,7 +35,6 @@ function chooseTour(choosenTour) {
 }
 }
 document.getElementById("champ").onclick = function () {chooseTour(UCL)};
-//let choosenTour = chooseTour(UCL);
 
 
 function bytSida(html) {
@@ -134,6 +133,7 @@ results.forEach((result) =>{
 let parent1 = document.getElementById("row1");
 
 function displayMatchresult(results1) {
+  parent1.innerHTML = "";
   results1.forEach((result) => {
    
     var child = document.createElement("div");
@@ -203,9 +203,7 @@ function displayMatchresult(results1) {
 
 
 
-//window.onload = searchShow(chooseTour(UCL));
 window.onload = searchShow("Uefa Champions League");
-//window.onload = searchShow("coppa italia");
 
 
  
