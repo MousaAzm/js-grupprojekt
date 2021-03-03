@@ -106,7 +106,8 @@ results.forEach((result) =>{
   child.className = "col-4";
   pa.className ="card-text"
   imeg.alt = "Card image cap";
-
+  
+   child.target = "_blank";
    child.href = "https://" + result.strWebsite;
     imeg.src = result.strTeamBadge;
     title.innerText = result.strTeam;
