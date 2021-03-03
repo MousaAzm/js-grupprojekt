@@ -142,6 +142,7 @@ function displayMatchresult(results1) {
     var title = document.createElement("h2");
     var stadium = document.createElement("p");
     var date = document.createElement("h3");
+    var matchresult = document.createElement("h4");
 
 
     thumb.className = "card-img-top";
@@ -154,8 +155,8 @@ function displayMatchresult(results1) {
     var imageSrc = result.strThumb;
     title.innerText = result.strEvent;
     stadium.innerText = result.strVenue;
-    date.innerText = result.dateEvent;
-    var status = result.strStatus;
+    
+   
  
 
     if (imageSrc == null) {
@@ -166,14 +167,37 @@ function displayMatchresult(results1) {
       thumb.src = imageSrc;
 
     }
+    let status = result.strStatus;
+    if(status == "Match Finished"){
 
 
+      matchresult.innerText = result.intHomeScore + "-" + result.intAwayScore;
+      date.innerText = result.dateEvent;
+      child1.append(matchresult);
       child1.append(thumb);
       child1.append(title);
       child1.append(stadium);
       child1.append(date);
       child.append(child1);
       parent1.append(child);
+
+    }
+    else if(status == "Not Started") {
+      date.innerText = result.dateEvent;
+      matchresult.innerText ="UPCOMING MATCH"
+      child1.append(matchresult);
+      child1.append(thumb);
+      child1.append(title);
+      child1.append(stadium);
+      child1.append(date);
+      child.append(child1);
+      parent1.append(child);
+
+
+    }
+   
+
+     
   });
 }
 
